@@ -28,6 +28,9 @@
       <div>
         <button type="button" id="send">send</button>
       </div>
+      <div>
+        <button type="button" id="delete">delete</button>
+      </div>
     </fieldset>
   </form>
 
@@ -51,7 +54,8 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
     const firebaseConfig = {
-
+      //ここにAPIキーを入力する
+      // apiKey: 
       authDomain: "chat-app00-55911.firebaseapp.com",
       projectId: "chat-app00-55911",
       storageBucket: "chat-app00-55911.appspot.com",
@@ -63,6 +67,7 @@
       getFirestore,
       collection,
       addDoc,
+      deleteDoc,
       serverTimestamp,
       query,
       orderBy,
@@ -109,6 +114,14 @@
       });
 
       $("#output").html(htmlElements);
+
+      //deleteボタンで最新のチャットを削除
+      $("#delete").on("click", function () {
+        // 送信時に必要な処理
+        // console.log(Object.keys(documents).length);
+        //deleteDoc(collection(db, "chat"), postData);
+
+      });
 
     });
   </script>
